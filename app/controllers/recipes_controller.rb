@@ -13,10 +13,6 @@ class RecipesController < ApplicationController
 
   private
 
-  def authorize
-    render json: { errors: ["Not authorized"] }, status: :unauthorized unless session[:user_id]
-  end
-
   def recipe_params
     params.permit(:title, :instructions, :minutes_to_complete)
   end
